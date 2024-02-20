@@ -1,0 +1,61 @@
+.about_me .aboutme_header,
+.my_skills .myskills_header,
+.my_portfolio .portfolio_header,
+.contacts .contacts_header {
+  text-align: center;
+  color: #070707;
+  font-size: 34px;
+  line-height: 43px;
+}
+
+.about_me .aboutme_descr,
+.my_skills .myskills_descr,
+.contacts .contacts_descr {
+  color: #070707;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+}
+
+.about_me p {
+  margin-top: 18px;
+  margin-bottom: 46px;
+}
+
+.my_skills .myskills_header {
+  margin-top: 89px;
+}
+
+.my_skills .myskills_descr {
+  margin-top: 53px;
+}
+
+.my_skills {
+  min-height: 610px;
+}
+
+.my_skills .skills_card_descr {
+  color: #828282;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.my_skills .skill_cards {
+  margin-top: 73px;
+  display: flex;
+
+  text-align: center;
+}
+
+.my_skills .skills_icon {
+  height: 115px;
+}
+
+@media (max-width: 767px) {
+  .my_skills .skill_card:nth-child(n + 2) {
+    padding-top: 60px;
+  }
+  .my_skills .skill_card:last-child {
+    padding-bottom: 60px;
+  }
+}

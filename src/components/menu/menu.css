@@ -1,0 +1,65 @@
+.menu_link:before {
+  content: attr(data-en);
+}
+
+nav {
+  height: 88px;
+}
+
+.menu_btn {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 0;
+
+  list-style-type: none;
+  border-bottom: 1px solid #828282;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.menu .menu_link {
+  color: #828282;
+  font-size: 18px;
+  line-height: 23px;
+
+  text-decoration: none;
+}
+
+.menu .active {
+  color: #070707;
+}
+
+.menu_link {
+  transition: background-color 0.3s ease; /* Добавляем переход при изменении цвета фона */
+}
+
+.menu_link:hover {
+  background-color: #ddd; /* Изменяем цвет фона при наведении */
+}
+
+.menu_link:active {
+  background-color: #bbb; /* Изменяем цвет фона при нажатии */
+}
+
+@keyframes buttonClick {
+  0% {
+    transform: scale(1); /* Начальное значение - без изменения размера */
+  }
+  50% {
+    transform: scale(
+      1.1
+    ); /* Значение в середине анимации - увеличение размера */
+  }
+  100% {
+    transform: scale(
+      1
+    ); /* Конечное значение - возвращаем к начальному размеру */
+  }
+}
+
+.menu_link:active {
+  animation: buttonClick 0.3s; /* Запускаем анимацию при нажатии */
+}
