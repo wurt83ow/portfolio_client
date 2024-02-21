@@ -1,6 +1,6 @@
-.about_me .aboutme_header,
-.my_skills .myskills_header,
-.my_portfolio .portfolio_header,
+.aboutme .aboutme_header,
+.skills .skills_header,
+.portfolio .portfolio_header,
 .contacts .contacts_header {
   text-align: center;
   color: #070707;
@@ -8,8 +8,8 @@
   line-height: 43px;
 }
 
-.about_me .aboutme_descr,
-.my_skills .myskills_descr,
+.aboutme .aboutme_descr,
+.skills .skills_descr,
 .contacts .contacts_descr {
   color: #070707;
   font-size: 18px;
@@ -17,45 +17,45 @@
   text-align: center;
 }
 
-.about_me p {
+.aboutme p {
   margin-top: 18px;
   margin-bottom: 46px;
 }
 
-.my_skills .myskills_header {
+.skills .skills_header {
   margin-top: 89px;
 }
 
-.my_skills .myskills_descr {
+.skills .skills_descr {
   margin-top: 53px;
 }
 
-.my_skills {
+.skills {
   min-height: 610px;
 }
 
-.my_skills .skills_card_descr {
+.skills .skills_card_descr {
   color: #828282;
   font-size: 14px;
   line-height: 18px;
 }
 
-.my_skills .skill_cards {
+.skills .skills_cards {
   margin-top: 73px;
   display: flex;
 
   text-align: center;
 }
 
-.my_skills .skills_icon {
+.skills .skills_icon {
   height: 115px;
 }
 
 @media (max-width: 767px) {
-  .my_skills .skill_card:nth-child(n + 2) {
+  .skills .skills_card:nth-child(n + 2) {
     padding-top: 60px;
   }
-  .my_skills .skill_card:last-child {
+  .skills .skills_card:last-child {
     padding-bottom: 60px;
   }
 }

@@ -12,8 +12,8 @@ function App() {
   const [sections, setSections] = useState([]);
   const menuItems = [
     { title: "Home", link: "#", isActive: true },
-    { title: "About me", link: "#about", isActive: false },
-    { title: "Skills", link: "#skills", isActive: false },
+    { title: "About me", link: "#aboutme", isActive: false },
+    { title: "Skills", link: "#skills", isActive: true },
     { title: "Portfolio", link: "#portfolio", isActive: false },
     { title: "Contacts", link: "#contacts", isActive: false },
   ];
@@ -25,6 +25,7 @@ function App() {
     const dataFromServer = [
       {
         id: 1,
+        nclass: "aboutme",
         title: "Обо мне",
         content: {
           text: `Привет! Меня зовут Андрей, и я - разработчик на Golang. Я начинал свою карьеру как разработчик 1С, и этот опыт дал мне глубокое понимание бизнес-процессов и потребностей пользователей.
@@ -38,6 +39,7 @@ function App() {
       },
       {
         id: 2,
+        nclass: "skills",
         title: "Опыт",
         content: {
           text: "I work in such technologies as",
@@ -113,7 +115,7 @@ function App() {
               </div>
             </div>
           </div>
-        </div>
+        </div>isActive
       </div>
 
       {/* Добавляем динамические секции */}
@@ -121,6 +123,8 @@ function App() {
       {sections.map((section) => (
         <Section
           key={section.id}
+          id={section.id}
+          nclass={section.nclass}
           title={section.title}
           content={section.content}
         />
