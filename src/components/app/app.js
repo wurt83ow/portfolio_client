@@ -1,6 +1,5 @@
 // App.js
 import React, { useState, useEffect } from "react";
-import "./app.css";
 
 import Menu from "../menu/menu.js";
 import Section from "../section/section.js";
@@ -26,16 +25,20 @@ function App() {
     const dataFromServer = [
       {
         id: 1,
-        title: "About me",
+        title: "Обо мне",
         content: {
-          text: "Hi, I'm Andrei – web developer from Moscow. I'm interested in development and everything connected with it. Ready to implement excellent projects with wonderful people.",
-          images: [{ src: "../media/haykPhoto.png", alt: "Andrei" }],
+          text: `Привет! Меня зовут Андрей, и я - разработчик на Golang. Я начинал свою карьеру как разработчик 1С, и этот опыт дал мне глубокое понимание бизнес-процессов и потребностей пользователей.
+            С тех пор я успешно перешел на Golang и с нетерпением исследую новые возможности, которые этот язык предлагает. Хотя создание высокопроизводительных веб-приложений и микросервисов - это новая область для меня, я уверен, что мой предыдущий опыт и навыки помогут мне в этом.
+          
+          На моем сайте вы найдете информацию обо мне, моем опыте работы, навыках и проектах, над которыми я работал. Если у вас есть вопросы или предложения, не стесняйтесь связаться со мной!
+          
+          Спасибо за посещение моего сайта. Надеюсь, вам понравится!`,
         },
         isActive: false,
       },
       {
         id: 2,
-        title: "Skills",
+        title: "Опыт",
         content: {
           text: "I work in such technologies as",
           images: [
@@ -55,7 +58,7 @@ function App() {
 
   return (
     <div className="App">
-      <header>
+      <div className="header">
         <Menu items={menuItems} />
         <div className="subheader">
           <div className="container">
@@ -77,7 +80,7 @@ function App() {
               </div>
               <div className="col-md-3 offset-md-1">
                 <div className="target_info">
-                  <p>Go developer</p>
+                  <p>golang developer</p>
                   <p>from Moscow</p>
                 </div>
               </div>
@@ -111,7 +114,7 @@ function App() {
             </div>
           </div>
         </div>
-      </header>
+      </div>
 
       {/* Добавляем динамические секции */}
 
