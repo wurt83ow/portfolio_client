@@ -1,7 +1,7 @@
 // App.js
 import React, { useState, useEffect } from "react";
-
-import Menu from "../menu/menu.js";
+import "./app.scss";
+import Header from "../header/header.js";
 import Section from "../section/section.js";
 import html5Icon from "../icons/technology/html5.png";
 import css3Icon from "../icons/technology/css3.png";
@@ -43,11 +43,11 @@ function App() {
         title: "Опыт",
         content: {
           text: "I work in such technologies as",
-          images: [
-            { src: html5Icon, alt: "HTML5" },
-            { src: css3Icon, alt: "CSS3" },
-            { src: javascriptIcon, alt: "JavaScript" },
-            { src: reactIcon, alt: "React" },
+          cards: [
+            { src: html5Icon, alt: "HTML5", rating: 1 },
+            { src: css3Icon, alt: "CSS3", rating: 2 },
+            { src: javascriptIcon, alt: "JavaScript", rating: 3 },
+            { src: reactIcon, alt: "React", rating: 4 },
           ],
           isActive: true,
         },
@@ -60,75 +60,20 @@ function App() {
 
   return (
     <div className="App">
-      <div className="header">
-        <Menu items={menuItems} />
-        <div className="subheader">
-          <div className="container">
-            <div className="row">
-              <div className="col">
-                <div className="menu_btn">
-                  <button data-modal-menu>
-                    <img src="icons/menu.png" alt="menu" />
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-md-4">
-                <div className="target_name">
-                  <p>Andrei</p>
-                  <p>Tokarev</p>
-                </div>
-              </div>
-              <div className="col-md-3 offset-md-1">
-                <div className="target_info">
-                  <p>golang developer</p>
-                  <p>from Moscow</p>
-                </div>
-              </div>
-              <div className="col-md-4 lang_box">
-                <div className="lang_switch">
-                  <div className="form_toggle">
-                    <label className="contactChoice item-1">
-                      <input
-                        id="fid-1"
-                        type="radio"
-                        name="radio"
-                        value="ru"
-                        defaultChecked
-                      />
-                      <div className="langs">ru</div>
-                    </label>
-                    <label className="contactChoice item-2">
-                      <input id="fid-2" type="radio" name="radio" value="eng" />
-                      <div className="langs">eng</div>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-md-12">
-                <div className="target_photo">
-                  {/* <img src="media/targetPhoto.png" alt="photo" /> */}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>isActive
-      </div>
+      <Header menuItems={menuItems} />
 
       {/* Добавляем динамические секции */}
-
-      {sections.map((section) => (
-        <Section
-          key={section.id}
-          id={section.id}
-          nclass={section.nclass}
-          title={section.title}
-          content={section.content}
-        />
-      ))}
+      <div className="sections">
+        {sections.map((section) => (
+          <Section
+            key={section.id}
+            id={section.id}
+            nclass={section.nclass}
+            title={section.title}
+            content={section.content}
+          />
+        ))}
+      </div>
     </div>
   );
 }

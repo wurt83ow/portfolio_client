@@ -1,0 +1,17 @@
+.rating-mini {
+  margin-top: 39px;
+  display: inline-block;
+  font-size: 0;
+}
+.rating-mini span {
+  padding: 4px;
+  font-size: 30px;
+  line-height: 1;
+  color: #e5e5e5;
+}
+.rating-mini > span:before {
+  content: "★";
+}
+.rating-mini > span.active {
+  color: #070707;
+}

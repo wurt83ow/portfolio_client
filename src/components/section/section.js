@@ -1,7 +1,7 @@
 import React from "react";
-import "./section.css";
+import "./section.scss";
 
-import Header from "../header/header.js";
+import SectionHeader from "../sectionHeader/sectionHeader.js";
 import Card from "../card/card.js";
 
 function Section({ id, nclass, title, content }) {
@@ -9,12 +9,11 @@ function Section({ id, nclass, title, content }) {
     id % 2 === 0 ? "highlight" : ""
   }`;
 
-  console.log("77777777777777777777777777777777777777777777", classNames);
   return (
     <section className={classNames}>
       <div className="container">
         <div className="row">
-          <Header
+          <SectionHeader
             nclass={nclass}
             title={title}
             text={content.text.split("\n").map((item, index) => (
@@ -25,12 +24,17 @@ function Section({ id, nclass, title, content }) {
             ))}
           />
         </div>
-        {content.images && content.images.length > 0 && (
+        {content.cards && content.cards.length > 0 && (
           <div className={`row gx-5 ${nclass.toLowerCase()}_cards`}>
             <div className="container">
               <div className="row row-cols-1 row-cols-md-4 g-4">
-                {content.images.map((image, index) => (
-                  <Card key={index} image={image} isActive={content.isActive} />
+                {content.cards.map((card, index) => (
+                  <Card
+                    key={index}
+                    card={card}
+                    isActive={content.isActive}
+                    rating={content.rating}
+                  />
                 ))}
               </div>
             </div>
