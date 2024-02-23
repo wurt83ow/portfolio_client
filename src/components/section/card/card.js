@@ -1,8 +1,7 @@
 import React from "react";
-import RatingMini from "../ratingMini/ratingMini.js";
+import RatingMini from "../../ratingMini/ratingMini.js";
 
 function Card({ card, isActive }) {
-  console.log("8888888888888888888888", isActive);
   return (
     <div className="col-md-3">
       <div className="skills_icon skill_card">
