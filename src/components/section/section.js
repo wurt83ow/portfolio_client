@@ -46,19 +46,18 @@ function Section({ id, nclass, title, content }) {
               content.bigCards.map((bigCard, index) => (
                 <BigCard key={index} card={bigCard} />
               ))}
-
-            {content.socialIcons && content.socialIcons.length > 0 && (
-              <div className="col-md-12 socialnet_icons">
-                {content.socialIcons.map((socialIcon, index) => (
-                  <SocialIcon key={index} card={socialIcon} />
-                ))}
-              </div>
-            )}
           </div>
+          {content.socialIcons && content.socialIcons.length > 0 && (
+            <div className="col-md-12 socialnet_icons">
+              {content.socialIcons.map((socialIcon, index) => (
+                <SocialIcon key={index} card={socialIcon} />
+              ))}
+            </div>
+          )}
         </div>
 
         {content.textAfter && (
-          <div class="socialnet_descr">
+          <div className="socialnet_descr">
             {content.textAfter.split("\n").map((item, index) => (
               <React.Fragment key={index}>
                 {item}
