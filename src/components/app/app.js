@@ -48,15 +48,21 @@ function App() {
     <div className="App">
       <Header menuItems={menuItems} />
       <div className="sections">
-        {sections.map((section) => (
-          <Section
-            key={section.id}
-            id={section.id}
-            nclass={section.nclass}
-            title={section.title}
-            content={section.content}
-          />
-        ))}
+        {sections.map(
+          (section) =>
+            console.log(
+              "333333333333333333333333333333333333333333333",
+              section.id
+            ) || (
+              <Section
+                key={section.id}
+                id={section.id}
+                nclass={section.nclass}
+                title={section.title}
+                content={section.content}
+              />
+            )
+        )}
       </div>
     </div>
   );
