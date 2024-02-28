@@ -19,14 +19,18 @@ RUN npm run build
 # Используем официальный образ nginx для раздачи статических файлов
 FROM nginx:stable-alpine
 
-# Копируем собранное приложение из предыдущего этапа
-COPY --from=build /app/build /usr/share/nginx/html
-
 # Копируем конфигурацию nginx
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
+
+# Копируем собранные файлы приложения из контейнера сборки в контейнер nginx
+COPY --from=build /app/build /usr/share/nginx/html
 
 # Открываем порт 80
 EXPOSE 80
 
 # Запускаем nginx
 CMD ["nginx", "-g", "daemon off;"]
+
+# Указываем монтирование тома
+VOLUME /app

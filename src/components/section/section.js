@@ -32,7 +32,7 @@ function Section({ id, nclass, title, content }) {
             {content.items && content.items.length > 0 && (
               <div className="row row-cols-1 row-cols-md-4 g-4">
                 {content.items.map((item, _) => {
-                  const key = `${item.iclass}-${item.id}`;
+                  const key = item.id; //`${item.iclass}-${item.id}`;
                   switch (content.iclass) {
                     case "cards":
                       return (
