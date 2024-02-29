@@ -1,5 +1,5 @@
 # Используем официальный образ Node.js для сборки приложения
-FROM node:14 as build
+FROM node:18 as build
 
 # Устанавливаем рабочую директорию
 WORKDIR /app
@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Собираем приложение
-RUN npm run build
+RUN npx webpack
 
 # Используем официальный образ nginx для раздачи статических файлов
 FROM nginx:stable-alpine
@@ -24,7 +24,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY default.conf /etc/nginx/conf.d/default.conf
 
 # Копируем собранные файлы приложения из контейнера сборки в контейнер nginx
-COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 
 # Открываем порт 80
 EXPOSE 80

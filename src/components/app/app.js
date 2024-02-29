@@ -39,7 +39,6 @@ function App() {
   if (isLoading) {
     return <div>Загрузка...</div>;
   }
-
   if (error) {
     return <div>Ошибка1: {error}</div>;
   }

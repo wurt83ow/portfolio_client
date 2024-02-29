@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin"); // Не забудьте установить этот пакет
 
 module.exports = {
   entry: "./src/index.js",
@@ -21,7 +22,12 @@ module.exports = {
           "style-loader",
           "css-loader",
           "resolve-url-loader", // добавлен resolve-url-loader
-          "sass-loader?sourceMap", // включен sourceMap для sass-loader
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true, // включен sourceMap для sass-loader
+            },
+          },
         ],
       },
       {
@@ -30,4 +36,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html", // путь к вашему исходному файлу index.html
+    }),
+  ],
 };
