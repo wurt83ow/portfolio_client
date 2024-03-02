@@ -4,6 +4,8 @@ import "./app.scss";
 import Header from "../header/header.js";
 import Section from "../section/section.js";
 
+const BASE_URL = "http://localhost";
+
 function App() {
   const [sections, setSections] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +20,7 @@ function App() {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:8090/api/sections")
+    fetch(`${BASE_URL}:8080/api/sections`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Ошибка загрузки данных");
@@ -26,7 +28,6 @@ function App() {
         return response.json();
       })
       .then((dataFromServer) => {
-        console.log("7777777777777777777777777777777777777777", dataFromServer);
         setSections(dataFromServer);
         setIsLoading(false);
       })
@@ -54,6 +55,7 @@ function App() {
             nclass={section.nclass}
             title={section.title}
             content={section.content}
+            baseurl={BASE_URL}
           />
         ))}
       </div>

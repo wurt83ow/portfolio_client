@@ -16,21 +16,19 @@ COPY . .
 # Собираем приложение
 RUN npx webpack
 
-# Используем официальный образ nginx для раздачи статических файлов
-FROM nginx:stable-alpine
+# Начинаем новую стадию для Nginx
+FROM nginx:alpine
 
-# Копируем конфигурацию nginx
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY default.conf /etc/nginx/conf.d/default.conf
-
-# Копируем собранные файлы приложения из контейнера сборки в контейнер nginx
+# Копируем собранные файлы из предыдущей стадии
 COPY --from=build /app/dist /usr/share/nginx/html
+
+# Удаляем дефолтный Nginx конфиг
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Копируем наш конфиг
+COPY default.conf /etc/nginx/conf.d/
 
 # Открываем порт 80
 EXPOSE 80
 
-# Запускаем nginx
 CMD ["nginx", "-g", "daemon off;"]
-
-# Указываем монтирование тома
-VOLUME /app

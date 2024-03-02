@@ -6,7 +6,7 @@ import Card from "./card/card.js";
 import BigCard from "./bigCard/bigCard.js";
 import SocialIcon from "./socialIcon/socialIcon.js";
 
-function Section({ id, nclass, title, content }) {
+function Section({ id, nclass, title, content, baseurl }) {
   const classNames = `${nclass.toLowerCase()} ${
     id % 2 === 0 ? "highlight" : ""
   }`;
@@ -42,14 +42,17 @@ function Section({ id, nclass, title, content }) {
                           card={item}
                           isActive={content.isActive}
                           rating={content.rating}
+                          baseurl={baseurl}
                         />
                       );
                     case "bigCards":
-                      return <BigCard key={key} card={item} />;
+                      return (
+                        <BigCard key={key} card={item} baseurl={baseurl} />
+                      );
                     case "socialIcons":
                       return (
                         // <div className="col-md-12 socialnet_icons">
-                        <SocialIcon key={key} card={item} />
+                        <SocialIcon key={key} card={item} baseurl={baseurl} />
                         // </div>
                       );
                     default:
