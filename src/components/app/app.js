@@ -4,7 +4,8 @@ import "./app.scss";
 import Header from "../header/header.js";
 import Section from "../section/section.js";
 
-const BASE_URL = "http://51.250.122.145";
+// const BASE_URL = "http://51.250.122.145"; //!!! Вернуть
+const BASE_URL = "http://127.0.0.1";
 
 function App() {
   const [sections, setSections] = useState([]);
@@ -20,7 +21,7 @@ function App() {
   ];
 
   useEffect(() => {
-    fetch(`${BASE_URL}/api/sections`)
+    fetch(`${BASE_URL}:8080/api/sections`) //!!! Убрать :8080
       .then((response) => {
         if (!response.ok) {
           throw new Error("Ошибка загрузки данных");

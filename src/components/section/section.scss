@@ -1,156 +1,152 @@
 @import "../app/variables.scss";
 
+// Общие переменные
+$text-color: #070707;
+$header-font-size: 34px;
+$descr-font-size: 18px;
+
+$line-height-lil: 18px;
+$line-height-mid: 23px;
+$line-height-big: 43px;
+
+$margin-top-header: 120px;
+$margin-top-descr: 53px;
+
+// Общие стили
 .highlight {
   background-color: $background-color;
 }
 
-.aboutme {
+.section {
   width: 100%;
-  min-height: 506px;
-}
-.aboutme .aboutme_header {
-  margin-top: 120px;
+  min-height: 506px; // Значение по умолчанию, измените при необходимости
 }
 
-.aboutme .aboutme_header,
-.skills .skills_header,
-.portfolio .portfolio_header,
-.contacts .contacts_header {
-  text-align: center;
-  color: #070707;
-  font-size: 34px;
-  line-height: 43px;
-}
-
-.aboutme .aboutme_descr,
-.skills .skills_descr,
-.contacts .contacts_descr {
-  color: #070707;
-  font-size: 18px;
-  line-height: 23px;
+.section_header,
+.section_descr {
+  color: $text-color;
   text-align: center;
 }
 
-.aboutme p {
-  margin-top: 18px;
-  margin-bottom: 46px;
+.section_header {
+  font-size: $header-font-size;
+  line-height: $line-height-big;
 }
 
-.skills .skills_header {
-  margin-top: 89px;
+.section_descr {
+  font-size: $descr-font-size;
+  line-height: $line-height-mid;
 }
 
-.skills .skills_descr {
-  margin-top: 53px;
+// Специфичные стили для секций
+.aboutme,
+.skills,
+.portfolio,
+.contacts {
+  @extend .section;
 }
 
-///////////////////////////////////////////////////////////////////
+.aboutme {
+  .aboutme_header {
+    margin-top: $margin-top-header;
+  }
+
+  p {
+    margin: 18px 0 46px;
+  }
+}
 
 .skills {
   min-height: 610px;
-}
 
-.skills .skills_card_descr {
-  color: #828282;
-  font-size: 14px;
-  line-height: 18px;
-}
+  .skills_header {
+    margin-top: 89px;
+  }
 
-.skills .skills_cards {
-  margin-top: 73px;
-  display: flex;
-
-  text-align: center;
-}
-
-.skills .skills_icon {
-  height: 115px;
+  .skills_descr,
+  .skills_card_descr {
+    color: #828282;
+    font-size: 14px;
+    line-height: $line-height-lil;
+  }
 }
 
 .portfolio {
   background-color: $background-color;
   min-height: 2253px;
+
+  .portfolio_header {
+    margin-top: 110px;
+  }
+
+  .portfolio_image,
+  .portfolio_image_gap {
+    margin-top: 40px;
+    margin-left: 5px;
+  }
+
+  .portfolio_image_gap {
+    margin-left: 0;
+  }
+
+  .portfolio_link {
+    margin-top: 47px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+
+    a {
+      color: $text-color;
+      font-size: $descr-font-size;
+      line-height: $line-height-mid;
+      text-decoration-line: underline;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+  }
 }
 
-.portfolio .porfolio_card {
-  padding-bottom: 55px;
-}
-.portfolio .portfolio_header {
-  margin-top: 110px;
-}
+.contacts {
+  button {
+    color: #ffffff;
+    font-size: $descr-font-size;
+    line-height: $line-height-mid;
+    background: $text-color;
+    border-radius: 20px;
+    width: 180.5px;
+    height: 42px;
+    padding-top: 9px;
+  }
 
-.portfolio .portfolio_image {
-  margin-top: 40px;
-  margin-left: 5px;
-}
-.portfolio .portfolio_image_gap {
-  margin-top: 40px;
-  margin-left: 0;
-}
+  .row {
+    display: flex;
+    justify-content: center;
+  }
 
-.portfolio .portfolio_link {
-  margin-top: 47px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-}
-.portfolio .portfolio_link a {
-  color: #070707;
-  font-size: 18px;
-  line-height: 23px;
-  text-decoration-line: underline;
-  cursor: pointer;
-  margin-left: 10px;
-}
+  .contacts_header,
+  .contacts_descr,
+  .contacts_btn {
+    margin-top: 20px;
+  }
 
-.contacts button {
-  color: #ffffff;
-  font-size: 18px;
-  line-height: 23px;
-  background: #070707;
-  border-radius: 20px;
-  width: 180.5px;
-  height: 42px;
-  padding-top: 9px;
-}
+  .contacts_descr,
+  .socialnet_descr {
+    margin-left: 9px;
+    color: #828282;
+    font-size: 14px;
+    line-height: $line-height-lil;
+    text-align: center;
+  }
 
-.contacts .row {
-  display: flex;
-  justify-content: center;
-}
+  .socialnet_icons {
+    margin-top: 87px;
+    display: flex;
+    justify-content: space-between;
+    width: 360px;
+  }
 
-.contacts .contacts_header {
-  margin-top: 113px;
-}
-
-.contacts .contacts_descr {
-  margin-top: 20px;
-  margin-left: 9px;
-}
-
-.contacts .contacts_btn {
-  margin-top: 27px;
-  margin-left: 5px;
-  text-align: center;
-}
-
-.contacts a {
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.contacts .socialnet_icons {
-  margin-top: 87px;
-  display: flex;
-  justify-content: space-between;
-  width: 360px;
-}
-
-.contacts .socialnet_descr {
-  margin-top: 45px;
-  margin-left: 7px;
-  color: #828282;
-  font-size: 14px;
-  line-height: 18px;
-  text-align: center;
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
