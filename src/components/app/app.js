@@ -4,7 +4,7 @@ import "./app.scss";
 import Header from "../header/header.js";
 import Section from "../section/section.js";
 
-const BASE_URL = "http://localhost";
+const BASE_URL = "http://51.250.122.145";
 
 function App() {
   const [sections, setSections] = useState([]);
@@ -12,7 +12,7 @@ function App() {
   const [error, setError] = useState(null);
 
   const menuItems = [
-    { title: "Home", link: "#", isActive: true },
+    { title: "Home777", link: "#", isActive: true },
     { title: "About me", link: "#aboutme", isActive: false },
     { title: "Skills", link: "#skills", isActive: true },
     { title: "Portfolio", link: "#portfolio", isActive: false },
@@ -20,7 +20,7 @@ function App() {
   ];
 
   useEffect(() => {
-    fetch(`${BASE_URL}:8080/api/sections`)
+    fetch(`${BASE_URL}/api/sections`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Ошибка загрузки данных");
