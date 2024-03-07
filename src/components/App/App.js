@@ -1,8 +1,8 @@
 // App.js
 import React, { useState, useEffect } from "react";
-import "./app.scss";
-import Header from "../header/header.js";
-import Section from "../section/section.js";
+import "./App.scss";
+import Header from "../Header/Header.js";
+import Section from "../Section/Section.js";
 
 // const BASE_URL = "http://51.250.122.145"; //!!! Вернуть
 const BASE_URL = "http://127.0.0.1";

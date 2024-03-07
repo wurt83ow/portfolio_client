@@ -1,4 +1,5 @@
 import React from "react";
+import "./BigCard.scss";
 
 function BigCard({ card, baseurl }) {
   return (

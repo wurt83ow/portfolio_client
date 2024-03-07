@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./menu.scss";
+import "./Menu.scss";
 
 function Menu({ items }) {
   // Создаем состояние для хранения активной кнопки

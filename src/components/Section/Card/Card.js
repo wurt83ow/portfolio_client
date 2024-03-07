@@ -1,6 +1,7 @@
 import React from "react";
-import RatingMini from "../../ratingMini/ratingMini.js";
-import "./card.scss";
+import RatingMini from "../../RatingMini/RatingMini.js";
+import "./Card.scss";
+
 function Card({ id, card, isActive, baseurl }) {
   return (
     <div className="col-md-3">

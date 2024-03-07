@@ -1,5 +1,5 @@
 import React from "react";
-import "./ratingMini.scss";
+import "./RatingMini.scss";
 
 function RatingMini({ rating, isActive }) {
   const renderStars = () => {

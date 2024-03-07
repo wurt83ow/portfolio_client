@@ -1,4 +1,5 @@
 import React from "react";
+import "./ContactButton.scss";
 
 function ContactButton({ text }) {
   return (

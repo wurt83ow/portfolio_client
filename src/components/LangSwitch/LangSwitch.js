@@ -1,6 +1,5 @@
-// LangSwitch.js
 import React from "react";
-import "./langSwitch.scss";
+import "./LangSwitch.scss";
 
 function LangSwitch() {
   return (

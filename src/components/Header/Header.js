@@ -1,7 +1,8 @@
 // Header.js
 import React from "react";
-import Menu from "../menu/menu.js";
-import LangSwitch from "../langSwitch/langSwitch.js";
+import "./Header.scss";
+import Menu from "../Menu/Menu.js";
+import LangSwitch from "../LangSwitch/LangSwitch.js";
 
 function Header({ menuItems }) {
   return (
