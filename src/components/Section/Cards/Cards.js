@@ -3,18 +3,17 @@ import Card from "../Card/Card.js";
 
 function Cards({ items, baseurl }) {
   return (
-    <React.Fragment>
+    <div className="row row-cols-1 row-cols-md-4 g-4">
       {items.map((item) => (
         <Card
           key={item.id}
           id={item.id}
           card={item}
-          isActive={item.isActive}
           rating={item.rating}
           baseurl={baseurl}
         />
       ))}
-    </React.Fragment>
+    </div>
   );
 }
 

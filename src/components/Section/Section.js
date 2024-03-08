@@ -30,7 +30,7 @@ function Section({ id, nclass, title, content, baseurl }) {
         <div className={`row ${nclass.toLowerCase()}_cards`}>
           <div className="container">
             {content.items && content.items.length > 0 && (
-              <div className="row row-cols-1 row-cols-md-4 g-4">
+              <React.Fragment>
                 {content.iclass === "cards" && (
                   <Cards items={content.items} baseurl={baseurl} />
                 )}
@@ -44,7 +44,7 @@ function Section({ id, nclass, title, content, baseurl }) {
                     textAfter={content.textAfter}
                   />
                 )}
-              </div>
+              </React.Fragment>
             )}
           </div>
         </div>
