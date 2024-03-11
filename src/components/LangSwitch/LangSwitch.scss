@@ -38,7 +38,7 @@
 
 .form_toggle input[type="radio"]:checked + .langs {
   font-weight: bold;
-  content: attr(data-eng);
+  content: attr(data-en);
 }
 
 .form_toggle input[type="radio"]:checked + .menu_link:before {

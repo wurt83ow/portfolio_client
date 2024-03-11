@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import RatingMini from "../../RatingMini/RatingMini.js";
 import "./Card.scss";
+import LanguageContext from "../../../contexts/LanguageContext.js"; // Импортируем контекст
 
 function Card({ id, card, baseurl }) {
+  const { language } = useContext(LanguageContext); // Используем контекст
+
   return (
     <div className="col-md-3">
       <div className="skills_icon skill_card">
-        <img src={baseurl + card.src} alt={card.alt} />
+        <img src={baseurl + card.src} alt={card.alt[language]} />{" "}
+        {/* Используем текущий язык для alt */}
       </div>
-      <h2 className="skills_card_descr">{card.alt}</h2>
+      <h2 className="skills_card_descr">{card.alt[language]}</h2>{" "}
+      {/* Используем текущий язык для alt */}
       {<RatingMini key={id} rating={card.rating} />}
     </div>
   );

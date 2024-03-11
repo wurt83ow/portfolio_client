@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./App.scss";
 import Header from "../Header/Header.js";
 import Section from "../Section/Section.js";
+import LanguageContext from "../../contexts/LanguageContext.js"; // Импортируем контекст
 
 // const BASE_URL = "http://51.250.122.145"; //!!! Вернуть
 const BASE_URL = "http://127.0.0.1";
@@ -11,14 +12,7 @@ function App() {
   const [sections, setSections] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  const menuItems = [
-    { title: "Home", link: "#", isActive: true },
-    { title: "About me", link: "#aboutme", isActive: false },
-    { title: "Skills", link: "#skills", isActive: true },
-    { title: "Portfolio", link: "#portfolio", isActive: false },
-    { title: "Contacts", link: "#contacts", isActive: false },
-  ];
+  const [language, setLanguage] = useState("en"); // Состояние для языка
 
   useEffect(() => {
     fetch(`${BASE_URL}:8080/api/sections`) //!!! Убрать :8080
@@ -46,21 +40,25 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header menuItems={menuItems} />
-      <div className="sections">
-        {sections.map((section) => (
-          <Section
-            key={section.id}
-            id={section.id}
-            nclass={section.nclass}
-            title={section.title}
-            content={section.content}
-            baseurl={BASE_URL}
-          />
-        ))}
+    <LanguageContext.Provider value={{ language, setLanguage }}>
+      {" "}
+      {/* Обертываем в Provider */}
+      <div className="App">
+        <Header />
+        <div className="sections">
+          {sections.map((section) => (
+            <Section
+              key={section.id}
+              id={section.id}
+              nclass={section.nclass}
+              title={section.title}
+              content={section.content}
+              baseurl={BASE_URL}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </LanguageContext.Provider>
   );
 }
 

@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import SocialIcon from "../SocialIcon/SocialIcon.js";
+import LanguageContext from "../../../contexts/LanguageContext.js"; // Импортируем контекст
 
-function SocialIcons({ items, baseurl, textAfter = "" }) {
+function SocialIcons({ items, baseurl, textAfter = {} }) {
+  const { language } = useContext(LanguageContext); // Используем контекст
+
+  // Проверяем, что textAfter определен
+  const textAfterContent = textAfter[language] || "";
+
   return (
-    <div className="row  ">
+    <div className="row">
       <div className="col-md-4 socialnet_icons">
         {items.map((item) => {
           return <SocialIcon key={item.id} card={item} baseurl={baseurl} />;
         })}
       </div>
 
-      {textAfter &&
-        textAfter.split("\n").map((item, index) => (
+      {textAfterContent &&
+        textAfterContent.split("\n").map((item, index) => (
           <div className="socialnet_descr" key={`after-${index}`}>
             {item}
             <br />
