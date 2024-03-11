@@ -1,17 +1,5 @@
 @import "../App/variables.scss";
 
-// Общие переменные
-$text-color: #070707;
-$header-font-size: 34px;
-$descr-font-size: 18px;
-
-$line-height-lil: 18px;
-$line-height-mid: 23px;
-$line-height-big: 43px;
-
-$margin-top-header: 120px;
-$margin-top-descr: 53px;
-
 // Общие стили
 .highlight {
   background-color: $background-color;
@@ -31,6 +19,7 @@ $margin-top-descr: 53px;
 .section_header {
   font-size: $header-font-size;
   line-height: $line-height-big;
+  margin-top: $margin-top-header;
 }
 
 .section_descr {
@@ -56,55 +45,10 @@ $margin-top-descr: 53px;
   }
 }
 
-.skills {
-  min-height: 610px;
-
-  .skills_header {
-    margin-top: 89px;
-  }
-
-  .skills_descr,
-  .skills_card_descr {
-    color: #828282;
-    font-size: 14px;
-    line-height: $line-height-lil;
-  }
-}
-
-.portfolio {
-  background-color: $background-color;
-  min-height: 2253px;
-
-  .portfolio_header {
-    margin-top: 110px;
-  }
-
-  .portfolio_image,
-  .portfolio_image_gap {
-    margin-top: 40px;
-    margin-left: 5px;
-  }
-
-  .portfolio_image_gap {
-    margin-left: 0;
-  }
-
-  .portfolio_link {
-    margin-top: 47px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-
-    a {
-      color: $text-color;
-      font-size: $descr-font-size;
-      line-height: $line-height-mid;
-      text-decoration-line: underline;
-      cursor: pointer;
-      margin-left: 10px;
-    }
-  }
-}
+// .portfolio {
+//   // background-color: $background-color;
+//   // min-height: 2253px;
+// }
 
 .contacts {
   button {
@@ -123,7 +67,6 @@ $margin-top-descr: 53px;
     justify-content: center;
   }
 
-  .contacts_header,
   .contacts_descr,
   .contacts_btn {
     margin-top: 20px;

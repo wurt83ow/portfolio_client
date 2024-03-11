@@ -1,0 +1,14 @@
+.skills {
+  min-height: 610px;
+
+  .skills_header {
+    margin-top: 89px;
+  }
+
+  .skills_descr,
+  .skills_card_descr {
+    color: #828282;
+    font-size: 14px;
+    line-height: $line-height-lil;
+  }
+}

@@ -13,7 +13,7 @@ function App() {
   const [error, setError] = useState(null);
 
   const menuItems = [
-    { title: "Home777", link: "#", isActive: true },
+    { title: "Home", link: "#", isActive: true },
     { title: "About me", link: "#aboutme", isActive: false },
     { title: "Skills", link: "#skills", isActive: true },
     { title: "Portfolio", link: "#portfolio", isActive: false },
