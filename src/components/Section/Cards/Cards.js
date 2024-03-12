@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import Card from "../Card/Card.js";
-
+import "./Cards.scss";
 function Cards({ items, baseurl }) {
   return (
     <div className="row row-cols-1 row-cols-md-4 g-4">

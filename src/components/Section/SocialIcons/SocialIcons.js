@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import SocialIcon from "../SocialIcon/SocialIcon.js";
+import "./SocialIcons.scss";
 import LanguageContext from "../../../contexts/LanguageContext.js"; // Импортируем контекст
 
 function SocialIcons({ items, baseurl, textAfter = {} }) {
