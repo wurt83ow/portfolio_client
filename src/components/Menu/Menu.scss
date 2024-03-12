@@ -63,3 +63,23 @@ nav {
 .menu_link:active {
   animation: buttonClick 0.3s; /* Запускаем анимацию при нажатии */
 }
+
+.menu_link {
+  color: #828282;
+  font-size: 18px;
+  line-height: 23px;
+  text-decoration: none;
+  transition: background-color 0.3s ease; /* Добавляем переход при изменении цвета фона */
+  cursor: pointer; /* Изменяем курсор на указатель при наведении */
+}
+
+.menu_link:hover {
+  background-color: #ddd; /* Изменяем цвет фона при наведении */
+  cursor: pointer; /* Указываем, что курсор остается указателем при наведении */
+}
+
+.menu_link:active {
+  background-color: #bbb; /* Изменяем цвет фона при нажатии */
+  animation: buttonClick 0.3s; /* Запускаем анимацию при нажатии */
+  cursor: pointer; /* Указываем, что курсор остается указателем при нажатии */
+}

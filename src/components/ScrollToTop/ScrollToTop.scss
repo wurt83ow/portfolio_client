@@ -1,0 +1,19 @@
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  background-color: #333; /* Изменено на серый */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Добавлено анимацию для box-shadow */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавлена тень */
+}
+
+.scroll-to-top-button:hover {
+  background-color: #555; /* Изменено на темно-серый при наведении */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Увеличена тень при наведении */
+}

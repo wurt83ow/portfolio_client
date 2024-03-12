@@ -28,18 +28,22 @@ function Header() {
     { title: { en: "Home", ru: "Домой" }, link: "#", isActive: true },
     {
       title: { en: "About me", ru: "Обо мне" },
-      link: "#aboutme",
+      link: "#section-aboutme",
       isActive: false,
     },
-    { title: { en: "Skills", ru: "Навыки" }, link: "#skills", isActive: true },
+    {
+      title: { en: "Skills", ru: "Навыки" },
+      link: "#section-skills",
+      isActive: true,
+    },
     {
       title: { en: "Portfolio", ru: "Портфолио" },
-      link: "#portfolio",
+      link: "#section-portfolio",
       isActive: false,
     },
     {
       title: { en: "Contacts", ru: "Контакты" },
-      link: "#contacts",
+      link: "#section-contacts",
       isActive: false,
     },
   ];

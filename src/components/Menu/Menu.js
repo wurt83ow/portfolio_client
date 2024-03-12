@@ -1,15 +1,14 @@
 import React, { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
+
+import { Link as ScrollLink } from "react-scroll";
 import "./Menu.scss";
 
 function Menu({ items }) {
-  // Создаем состояние для хранения активной кнопки
   const [activeIndex, setActiveIndex] = useState(null);
 
-  // Функция-обработчик клика по кнопке
   const handleClick = (index) => {
-    // Устанавливаем индекс активной кнопки
     setActiveIndex(index);
-    // Ваша логика обработки клика, например, изменение состояния isActive
     console.log("Button clicked:", items[index].title);
   };
 
@@ -17,17 +16,25 @@ function Menu({ items }) {
     <nav>
       <div className="container">
         <ul className="menu">
-          {items.map((item, index) => (
-            <li key={index} className="menu_item">
-              <a
-                href={item.link}
-                className={`menu_link ${index === activeIndex ? "active" : ""}`}
-                onClick={() => handleClick(index)} // Добавляем обработчик клика
-              >
-                {item.title}
-              </a>
-            </li>
-          ))}
+          {items.map(
+            (item, index) =>
+              console.log("777777777777777777", item.link) || (
+                <li key={index} className="menu_item">
+                  {/* Используйте ScrollLink для скроллинга к разделам */}
+                  <ScrollLink
+                    to={item.link.substring(1)}
+                    smooth={true}
+                    duration={500}
+                    className={`menu_link ${
+                      index === activeIndex ? "active" : ""
+                    }`}
+                    onClick={() => handleClick(index)}
+                  >
+                    {item.title}
+                  </ScrollLink>
+                </li>
+              )
+          )}
         </ul>
       </div>
     </nav>

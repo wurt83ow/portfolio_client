@@ -4,6 +4,7 @@ import "./App.scss";
 import Header from "../Header/Header.js";
 import Section from "../Section/Section.js";
 import LanguageContext from "../../contexts/LanguageContext.js"; // Импортируем контекст
+import ScrollToTop from "../ScrollToTop/ScrollToTop.js"; // Импортируем компонент ScrollToTop
 
 // const BASE_URL = "http://51.250.122.145"; //!!! Вернуть
 const BASE_URL = "http://127.0.0.1";
@@ -57,6 +58,7 @@ function App() {
             />
           ))}
         </div>
+        <ScrollToTop /> {/* Добавляем компонент ScrollToTop */}
       </div>
     </LanguageContext.Provider>
   );
