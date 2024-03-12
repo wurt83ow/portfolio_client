@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./ModalMenu.scss";
+import LanguageContext from "../../contexts/LanguageContext"; // Импортируем контекст
 
-function ModalMenu({ items, triggerText, language }) {
-  console.log("333333333333333333", items);
+function ModalMenu({ items, triggerText }) {
   const [isOpen, setIsOpen] = useState(false);
+  const { language, setLanguage } = useContext(LanguageContext); // Используем контекст
 
   const toggleModal = () => {
     setIsOpen(!isOpen);
     document.body.style.overflow = isOpen ? "visible" : "hidden";
+  };
+
+  const handleLanguageChange = (event) => {
+    setLanguage(event.target.value);
   };
 
   return (
@@ -40,6 +45,29 @@ function ModalMenu({ items, triggerText, language }) {
                   </a>
                 </div>
               ))}
+              {/* Простая реализация выбора языка */}
+              <div className="simple_lang_switch">
+                <label>
+                  <input
+                    type="radio"
+                    name="language"
+                    value="ru"
+                    checked={language === "ru"}
+                    onChange={handleLanguageChange}
+                  />
+                  Русский
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="language"
+                    value="en"
+                    checked={language === "en"}
+                    onChange={handleLanguageChange}
+                  />
+                  English
+                </label>
+              </div>
             </div>
           </div>
         </div>
