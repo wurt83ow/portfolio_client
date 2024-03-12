@@ -8,4 +8,9 @@
   .skills_icon {
     height: 115px;
   }
+
+  .skills_card_descr a {
+    color: black; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+  }
 }

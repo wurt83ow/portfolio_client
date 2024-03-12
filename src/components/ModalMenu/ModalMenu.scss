@@ -1,0 +1,141 @@
+@media (max-width: 575px) {
+  .menu_btn {
+    position: absolute;
+    top: 67px;
+    right: 30px;
+    display: block;
+    z-index: 9999;
+  }
+  .menu_btn button {
+    border: none;
+  }
+  .menu_btn button {
+    position: relative;
+    width: 30px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu_btn button::before,
+  .menu_btn button::after,
+  .menu_btn button span {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #000; /* Цвет полосок */
+    transition: all 0.3s ease;
+  }
+
+  .menu_btn button::before {
+    top: 0;
+  }
+
+  .menu_btn button::after {
+    bottom: 0;
+  }
+
+  .menu_btn button span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .menu_btn button.active::before {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu_btn button.active::after {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .menu_btn button.active span {
+    opacity: 10;
+  }
+}
+
+@media (max-width: 380px) {
+  .menu_btn {
+    top: 30px;
+    right: 10px;
+  }
+
+  .contacts button {
+    font-size: 16px;
+    width: 80.5px;
+  }
+}
+
+///////////////////////////////////////////////
+
+.modal_menu {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1050;
+  // display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal_menu__dialog {
+  position: fixed;
+  right: 5px;
+}
+
+.modal_menu__content {
+  position: relative;
+  width: 375px;
+  padding-top: 32px;
+  padding-left: 25px;
+  background-color: #f6f6f6;
+  border: 1px solid black;
+  min-height: 812px;
+  overflow-y: auto;
+}
+
+.modal_menu__close {
+  color: #828282;
+  position: absolute;
+  top: 46px;
+  right: 27px;
+  font-size: 43px;
+
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.modal_menu__input {
+  color: #828282;
+  width: 258px;
+  margin-top: 15px;
+  padding-left: 0px;
+  margin-left: 0px;
+  font-size: 34px;
+  line-height: 77px;
+}
+
+.modal_menu__input a {
+  text-decoration: none;
+  color: #828282;
+}
+
+.modal_menu .lang_switch {
+  color: #828282;
+  width: 60px;
+  transform: rotate(90deg);
+  font-size: 54px;
+  line-height: 43px;
+  text-transform: uppercase;
+  margin: 125px 0 0 270px;
+}
+
+.modal_menu .lang_switch label {
+  font-size: 34px;
+  line-height: 43px;
+}

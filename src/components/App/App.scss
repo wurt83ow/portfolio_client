@@ -57,3 +57,76 @@ nav {
   margin-bottom: 104px;
   background-image: url("../media/targetPhoto.png");
 }
+
+@media (max-width: 991px) {
+  .container {
+    width: auto;
+    margin: 0 auto;
+  }
+  .my_portfolio .portfolio_image img {
+    width: 100%;
+  }
+
+  .my_portfolio {
+    background-color: #f6f6f6;
+    min-height: 100%;
+  }
+  .subheader .target_photo {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 700px;
+  }
+}
+
+@media (max-width: 767px) {
+  .my_skills .skill_card:nth-child(n + 2) {
+    padding-top: 60px;
+  }
+  .my_skills .skill_card:last-child {
+    padding-bottom: 60px;
+  }
+  .subheader .target_photo {
+    margin-bottom: 0px;
+  }
+  .subheader .target_info {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  nav,
+  .subheader .form_toggle {
+    display: none;
+  }
+  .subheader .target_photo {
+    background-image: url("../media/mTargetPhoto.png");
+    background-size: contain;
+    background-position: center;
+  }
+
+  .subheader .target_name {
+    margin-top: 27px;
+  }
+
+  // .menu_btn {
+  //   position: absolute;
+  //   top: 67px;
+  //   right: 30px;
+  //   display: block;
+  // }
+  // .menu_btn button {
+  //   border: none;
+  // }
+}
+
+@media (max-width: 380px) {
+  // .menu_btn {
+  //   top: 30px;
+  //   right: 10px;
+  // }
+
+  .contacts button {
+    font-size: 16px;
+    width: 80.5px;
+  }
+}

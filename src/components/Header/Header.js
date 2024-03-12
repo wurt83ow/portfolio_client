@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Header.scss";
 import Menu from "../Menu/Menu.js";
+import ModalMenu from "../ModalMenu/ModalMenu.js";
 import LangSwitch from "../LangSwitch/LangSwitch.js";
 import LanguageContext from "../../contexts/LanguageContext.js"; // Импортируем контекст
 
 function Header() {
   const { language } = useContext(LanguageContext); // Используем контекст
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Пример текстов для разных языков
   const texts = {
@@ -48,6 +50,9 @@ function Header() {
     },
   ];
 
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
   return (
     <div className="header">
       <Menu
@@ -62,12 +67,15 @@ function Header() {
           <div className="row">
             <div className="col">
               <div className="menu_btn">
-                <button data-modal-menu>
-                  <img src="icons/menu.png" alt="menu" />
-                </button>
+                <ModalMenu
+                  triggerText=""
+                  items={menuItems}
+                  language={language}
+                />
               </div>
             </div>
           </div>
+
           <div className="row">
             <div className="col-md-4">
               <div className="target_name">
@@ -90,7 +98,17 @@ function Header() {
               </div>
             </div>
           </div>
-          {/* Здесь можно добавить любые другие элементы шапки */}
+          {isModalOpen && (
+            <div className="modal" onClick={toggleModal}>
+              <div
+                className="modal-content"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Содержимое модального окна */}
+                <button onClick={toggleModal}>Закрыть</button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

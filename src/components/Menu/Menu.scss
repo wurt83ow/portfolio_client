@@ -83,3 +83,15 @@ nav {
   animation: buttonClick 0.3s; /* Запускаем анимацию при нажатии */
   cursor: pointer; /* Указываем, что курсор остается указателем при нажатии */
 }
+
+// @media (max-width: 575px) {
+//   .menu_btn {
+//     position: absolute;
+//     top: 67px;
+//     right: 30px;
+//     display: block;
+//   }
+//   .menu_btn button {
+//     border: none;
+//   }
+// }

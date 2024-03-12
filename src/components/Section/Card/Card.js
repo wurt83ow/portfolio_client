@@ -9,11 +9,16 @@ function Card({ id, card, baseurl }) {
   return (
     <div className="col-md-3">
       <div className="skills_icon skill_card">
-        <img src={baseurl + card.src} alt={card.alt[language]} />{" "}
-        {/* Используем текущий язык для alt */}
+        <a href={card.hrefs[0]} target="_blank" rel="noopener noreferrer">
+          <img src={baseurl + card.src} alt={card.alt[language]} />{" "}
+          {/* Используем текущий язык для alt */}
+        </a>
       </div>
-      <h2 className="skills_card_descr">{card.alt[language]}</h2>{" "}
-      {/* Используем текущий язык для alt */}
+      <div className="skills_card_descr">
+        <a href={card.hrefs[0]} target="_blank" rel="noopener noreferrer">
+          <h2>{card.alt[language]}</h2> {/* Используем текущий язык для alt */}
+        </a>
+      </div>
       {<RatingMini key={id} rating={card.rating} />}
     </div>
   );
