@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Project from "../Project/Project";
+import Project from "./Project/Project.js";
 import "./Projects.scss";
 import LanguageContext from "../../../contexts/LanguageContext.js"; // Импортируем контекст
 

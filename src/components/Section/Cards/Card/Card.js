@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import RatingMini from "../../RatingMini/RatingMini.js";
+import RatingMini from "../../../RatingMini/RatingMini.js";
 import "./Card.scss";
-import LanguageContext from "../../../contexts/LanguageContext.js"; // Импортируем контекст
+import LanguageContext from "../../../../contexts/LanguageContext.js"; // Импортируем контекст
 
 function Card({ id, card, baseurl }) {
   const { language } = useContext(LanguageContext); // Используем контекст
