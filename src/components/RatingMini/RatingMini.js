@@ -1,7 +1,7 @@
 import React from "react";
 import "./RatingMini.scss";
 
-function RatingMini({ rating, isActive }) {
+function RatingMini({ rating }) {
   const renderStars = () => {
     const stars = [];
     for (let i = 0; i < 5; i++) {
@@ -14,7 +14,7 @@ function RatingMini({ rating, isActive }) {
     return stars;
   };
 
-  return isActive && <div className="rating-mini">{renderStars()}</div>;
+  return <div className="rating-mini">{renderStars()}</div>;
 }
 
 export default RatingMini;

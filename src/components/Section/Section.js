@@ -53,9 +53,7 @@ function Section({ id, nclass, title, content, baseurl }) {
                   <SocialIcons
                     items={content.items}
                     baseurl={baseurl}
-                    textAfter={
-                      content.textAfter ? content.textAfter[language] : ""
-                    }
+                    textAfter={content.textAfter}
                   />
                 )}
               </React.Fragment>

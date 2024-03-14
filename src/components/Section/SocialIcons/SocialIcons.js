@@ -16,14 +16,15 @@ function SocialIcons({ items, baseurl, textAfter = {} }) {
           return <SocialIcon key={item.id} card={item} baseurl={baseurl} />;
         })}
       </div>
-
-      {textAfterContent &&
-        textAfterContent.split("\n").map((item, index) => (
-          <div className="socialnet_descr" key={`after-${index}`}>
-            {item}
-            <br />
-          </div>
-        ))}
+      <div className="socialnet_descr">
+        {textAfterContent &&
+          textAfterContent.split("\n").map((item, index) => (
+            <div key={`after-${index}`}>
+              {item}
+              <br />
+            </div>
+          ))}
+      </div>
     </div>
   );
 }

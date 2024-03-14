@@ -14,8 +14,8 @@ function Header() {
     ru: {
       name: "Андрей",
       surname: "Токарев",
-      profession: "разработчик на Go",
-      location: "из Москвы",
+      profession: "golang-разработчик",
+      location: "город Москва",
     },
     en: {
       name: "Andrei",

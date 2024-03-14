@@ -14,7 +14,6 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 32px 0;
-
   list-style-type: none;
   border-bottom: 1px solid #828282;
   transform: matrix(1, 0, 0, 1, 0, 0);
@@ -24,74 +23,71 @@ nav {
   color: #828282;
   font-size: 18px;
   line-height: 23px;
-
   text-decoration: none;
+  position: relative;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавление тени */
 }
 
 .menu .active {
   color: #070707;
+  transition: color 0.3s ease; /* Плавная транзиция для активных ссылок */
 }
 
-.menu_link {
-  transition: background-color 0.3s ease; /* Добавляем переход при изменении цвета фона */
+.menu_link::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid #070707;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu_link:hover::before {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .menu_link:hover {
-  background-color: #ddd; /* Изменяем цвет фона при наведении */
+  background-color: #ddd;
+  transform: scale(1.05); /* Увеличение размера при наведении */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Увеличение тени при наведении */
 }
 
 .menu_link:active {
-  background-color: #bbb; /* Изменяем цвет фона при нажатии */
+  background-color: #bbb;
+  animation: magicTransition 0.3s;
+  cursor: pointer;
 }
 
-@keyframes buttonClick {
+@keyframes magicTransition {
   0% {
-    transform: scale(1); /* Начальное значение - без изменения размера */
+    transform: scale(1);
+    opacity: 1;
   }
   50% {
-    transform: scale(
-      1.1
-    ); /* Значение в середине анимации - увеличение размера */
+    transform: scale(1.05);
+    opacity: 0.5;
   }
   100% {
-    transform: scale(
-      1
-    ); /* Конечное значение - возвращаем к начальному размеру */
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
-.menu_link:active {
-  animation: buttonClick 0.3s; /* Запускаем анимацию при нажатии */
+@media (max-width: 575px) {
+  .menu_btn {
+    position: absolute;
+    top: 67px;
+    right: 30px;
+    display: block;
+  }
+  .menu_btn button {
+    border: none;
+  }
 }
-
-.menu_link {
-  color: #828282;
-  font-size: 18px;
-  line-height: 23px;
-  text-decoration: none;
-  transition: background-color 0.3s ease; /* Добавляем переход при изменении цвета фона */
-  cursor: pointer; /* Изменяем курсор на указатель при наведении */
-}
-
-.menu_link:hover {
-  background-color: #ddd; /* Изменяем цвет фона при наведении */
-  cursor: pointer; /* Указываем, что курсор остается указателем при наведении */
-}
-
-.menu_link:active {
-  background-color: #bbb; /* Изменяем цвет фона при нажатии */
-  animation: buttonClick 0.3s; /* Запускаем анимацию при нажатии */
-  cursor: pointer; /* Указываем, что курсор остается указателем при нажатии */
-}
-
-// @media (max-width: 575px) {
-//   .menu_btn {
-//     position: absolute;
-//     top: 67px;
-//     right: 30px;
-//     display: block;
-//   }
-//   .menu_btn button {
-//     border: none;
-//   }
-// }

@@ -5,6 +5,7 @@ import Header from "../Header/Header.js";
 import Section from "../Section/Section.js";
 import LanguageContext from "../../contexts/LanguageContext.js"; // Импортируем контекст
 import ScrollToTop from "../ScrollToTop/ScrollToTop.js"; // Импортируем компонент ScrollToTop
+import ErrorMessage from "../ErrorMessage/ErrorMessage.js"; // Импортируем компонент ErrorMessage
 
 // const BASE_URL = "http://51.250.122.145"; //!!! Вернуть
 const BASE_URL = "http://127.0.0.1";
@@ -37,7 +38,7 @@ function App() {
     return <div>Загрузка...</div>;
   }
   if (error) {
-    return <div>Ошибка1: {error}</div>;
+    return <ErrorMessage error={error} />; // Используем компонент ErrorMessage
   }
 
   return (
