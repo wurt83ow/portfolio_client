@@ -7,8 +7,7 @@ import LanguageContext from "../../contexts/LanguageContext.js"; // Импорт
 import ScrollToTop from "../ScrollToTop/ScrollToTop.js"; // Импортируем компонент ScrollToTop
 import ErrorMessage from "../ErrorMessage/ErrorMessage.js"; // Импортируем компонент ErrorMessage
 
-// const BASE_URL = "http://51.250.122.145"; //!!! Вернуть
-const BASE_URL = "http://127.0.0.1";
+const BASE_URL = "http://51.250.122.210";
 
 function App() {
   const [sections, setSections] = useState([]);
@@ -17,7 +16,7 @@ function App() {
   const [language, setLanguage] = useState("en"); // Состояние для языка
 
   useEffect(() => {
-    fetch(`${BASE_URL}:8080/api/sections`) //!!! Убрать :8080
+    fetch(`${BASE_URL}/api/sections`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Ошибка загрузки данных");
