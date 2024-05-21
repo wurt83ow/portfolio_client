@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./ScrollToTop.scss"; // Убедитесь, что у вас есть соответствующий CSS файл
+import LanguageContext from "../../contexts/LanguageContext.js"; // Импортируем контекст
 
 const ScrollToTop = () => {
+  const { language } = useContext(LanguageContext); // Используем контекст для получения текущего языка
   const [isVisible, setIsVisible] = useState(false);
 
   // Функция для прокрутки страницы вверх
@@ -29,11 +31,14 @@ const ScrollToTop = () => {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
+  // Тексты кнопки в зависимости от языка
+  const buttonText = language === "en" ? "Up" : "Вверх";
+
   return (
     <div className="scroll-to-top">
       {isVisible && (
         <div onClick={scrollToTop} className="scroll-to-top-button">
-          Вверх
+          {buttonText}
         </div>
       )}
     </div>
