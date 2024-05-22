@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import "./Project.scss";
 import LanguageContext from "../../../../contexts/LanguageContext.js"; // Импортируем контекст
 
@@ -19,6 +20,14 @@ const Project = ({ project }) => {
       </div>
     </div>
   );
+};
+
+Project.propTypes = {
+  project: PropTypes.shape({
+    title: PropTypes.objectOf(PropTypes.string).isRequired,
+    descr: PropTypes.objectOf(PropTypes.string).isRequired,
+    hrefs: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
 };
 
 export default Project;

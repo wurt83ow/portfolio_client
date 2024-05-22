@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./RatingMini.scss";
 
 function RatingMini({ rating }) {
@@ -16,5 +17,9 @@ function RatingMini({ rating }) {
 
   return <div className="rating-mini">{renderStars()}</div>;
 }
+
+RatingMini.propTypes = {
+  rating: PropTypes.number.isRequired,
+};
 
 export default RatingMini;

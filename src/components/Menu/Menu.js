@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import PropTypes from "prop-types";
 import { Link as ScrollLink } from "react-scroll";
 import "./Menu.scss";
 
@@ -33,5 +33,14 @@ function Menu({ items }) {
     </nav>
   );
 }
+
+Menu.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      link: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
 
 export default Menu;

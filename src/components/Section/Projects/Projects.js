@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import Project from "./Project/Project.js";
 import "./Projects.scss";
 import LanguageContext from "../../../contexts/LanguageContext.js"; // Импортируем контекст
@@ -17,6 +18,18 @@ const Projects = ({ content }) => {
         content.items.map((item) => <Project key={item.id} project={item} />)}
     </div>
   );
+};
+
+Projects.propTypes = {
+  content: PropTypes.shape({
+    title: PropTypes.objectOf(PropTypes.string),
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+          .isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
 };
 
 export default Projects;

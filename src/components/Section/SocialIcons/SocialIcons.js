@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import SocialIcon from "./SocialIcon/SocialIcon.js";
 import "./SocialIcons.scss";
 import LanguageContext from "../../../contexts/LanguageContext.js"; // Импортируем контекст
@@ -28,5 +29,15 @@ function SocialIcons({ items, baseurl, textAfter = {} }) {
     </div>
   );
 }
+
+SocialIcons.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    })
+  ).isRequired,
+  baseurl: PropTypes.string.isRequired,
+  textAfter: PropTypes.objectOf(PropTypes.string),
+};
 
 export default SocialIcons;

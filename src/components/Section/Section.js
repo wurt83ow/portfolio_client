@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import "./Section.scss";
 import LanguageContext from "../../contexts/LanguageContext.js";
 
@@ -64,5 +65,18 @@ function Section({ id, nclass, title, content, baseurl }) {
     </section>
   );
 }
+
+Section.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  nclass: PropTypes.string.isRequired,
+  title: PropTypes.objectOf(PropTypes.string).isRequired,
+  content: PropTypes.shape({
+    textBefore: PropTypes.objectOf(PropTypes.string),
+    items: PropTypes.arrayOf(PropTypes.object).isRequired,
+    iclass: PropTypes.string.isRequired,
+    textAfter: PropTypes.objectOf(PropTypes.string),
+  }).isRequired,
+  baseurl: PropTypes.string.isRequired,
+};
 
 export default Section;

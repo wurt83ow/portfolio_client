@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin"); // Не забудьте установить этот пакет
+const TerserPlugin = require("terser-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -40,5 +42,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html", // путь к вашему исходному файлу index.html
     }),
+    new CleanWebpackPlugin(), // очищает выходную директорию перед каждой сборкой
   ],
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()], // минимизация JS файлов
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
+    compress: true,
+    port: 9000,
+  },
 };

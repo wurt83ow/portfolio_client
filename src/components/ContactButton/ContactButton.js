@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./ContactButton.scss";
 
 function ContactButton({ text }) {
@@ -8,5 +9,9 @@ function ContactButton({ text }) {
     </div>
   );
 }
+
+ContactButton.propTypes = {
+  text: PropTypes.string.isRequired,
+};
 
 export default ContactButton;

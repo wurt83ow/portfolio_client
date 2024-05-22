@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Card from "./Card/Card.js";
 import "./Cards.scss";
 function Cards({ items, baseurl }) {
@@ -16,5 +17,15 @@ function Cards({ items, baseurl }) {
     </div>
   );
 }
+
+Cards.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      rating: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+  baseurl: PropTypes.string.isRequired,
+};
 
 export default Cards;

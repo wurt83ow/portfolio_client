@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function SectionHeader({ nclass, title, text }) {
   return (
@@ -10,5 +11,11 @@ function SectionHeader({ nclass, title, text }) {
     </div>
   );
 }
+
+SectionHeader.propTypes = {
+  nclass: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+};
 
 export default SectionHeader;

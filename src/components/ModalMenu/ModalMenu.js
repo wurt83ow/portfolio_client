@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import PropTypes from "prop-types";
 import "./ModalMenu.scss";
 import LanguageContext from "../../contexts/LanguageContext"; // Импортируем контекст
 
@@ -75,5 +76,19 @@ function ModalMenu({ items, triggerText }) {
     </>
   );
 }
+
+ModalMenu.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      link: PropTypes.string.isRequired,
+      title: PropTypes.shape({
+        ru: PropTypes.string.isRequired,
+        en: PropTypes.string.isRequired,
+      }).isRequired,
+      isActive: PropTypes.bool.isRequired,
+    })
+  ).isRequired,
+  triggerText: PropTypes.string.isRequired,
+};
 
 export default ModalMenu;

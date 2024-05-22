@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import RatingMini from "../../../RatingMini/RatingMini.js";
 import "./Card.scss";
 import LanguageContext from "../../../../contexts/LanguageContext.js"; // Импортируем контекст
@@ -23,5 +24,16 @@ function Card({ id, card, baseurl }) {
     </div>
   );
 }
+
+Card.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  card: PropTypes.shape({
+    hrefs: PropTypes.arrayOf(PropTypes.string).isRequired,
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.objectOf(PropTypes.string).isRequired,
+    rating: PropTypes.number.isRequired,
+  }).isRequired,
+  baseurl: PropTypes.string.isRequired,
+};
 
 export default Card;
