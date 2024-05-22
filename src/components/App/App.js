@@ -6,8 +6,10 @@ import Section from "../Section/Section.js";
 import LanguageContext from "../../contexts/LanguageContext.js"; // Импортируем контекст
 import ScrollToTop from "../ScrollToTop/ScrollToTop.js"; // Импортируем компонент ScrollToTop
 import ErrorMessage from "../ErrorMessage/ErrorMessage.js"; // Импортируем компонент ErrorMessage
+import config from "../../config";
 
-const BASE_URL = "http://51.250.122.210";
+// const BASE_URL = "http://51.250.122.210";
+const BASE_URL = config.BASE_URL;
 
 function App() {
   const [sections, setSections] = useState([]);
