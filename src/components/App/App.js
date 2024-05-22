@@ -8,7 +8,6 @@ import ScrollToTop from "../ScrollToTop/ScrollToTop.js"; // Импортируе
 import ErrorMessage from "../ErrorMessage/ErrorMessage.js"; // Импортируем компонент ErrorMessage
 import config from "../../config";
 
-// const BASE_URL = "http://51.250.122.210";
 const BASE_URL = config.BASE_URL;
 
 function App() {
