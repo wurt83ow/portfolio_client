@@ -1,5 +1,5 @@
 const config = {
-  BASE_URL: "http://51.250.122.210",
+  BASE_URL: "http://127.0.0.1:8080", //"http://51.250.122.210",
   texts: {
     ru: {
       name: "Андрей",

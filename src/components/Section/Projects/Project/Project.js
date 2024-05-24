@@ -10,7 +10,8 @@ const Project = ({ project }) => {
     <div className="project">
       <h3>{project.title[language]}</h3>{" "}
       {/* Используем текущий язык для title */}
-      <p>{project.descr[language]}</p> {/* Используем текущий язык для descr */}
+      <p dangerouslySetInnerHTML={{ __html: project.descr[language] }} />{" "}
+      {/* Используем dangerouslySetInnerHTML для descr */}
       <div className="links">
         {project.hrefs.map((href, index) => (
           <a key={index} href={href} target="_blank" rel="noopener noreferrer">
